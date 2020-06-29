@@ -46,7 +46,7 @@ docker run -ti --rm --net oracle-net store/oracle/database-instantclient:12.2.0.
 bash-4.2# sqlplus sys1/Oradoc_db1@oracledb/ORCLPDB1.localdomain
 
 # Connect to CDB database
-bash-4.2# sqlplus sys/Oradoc_db1@oracledb/ORCLCDB.localdomain
+bash-4.2# sqlplus sys/Oradoc_db1@oracledb/ORCLCDB.localdomain as sysdba
 ```
 
 ## TODO
