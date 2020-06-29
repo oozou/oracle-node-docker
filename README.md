@@ -12,6 +12,8 @@ Permanent links: **Basic (.zip) or Basic Light (.zip)**
 
 * https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html
 
+Extract `Basic (.zip) or Basic Light (.zip)` to `instantclient/` folder of root dir
+
 ## Relevant Links
 
 1. https://blogs.oracle.com/opal/docker-for-oracle-database-applications-in-nodejs-and-python-part-1
@@ -34,7 +36,7 @@ docker run --name oracledb --net oracle-net -p 1521:1521 store/oracle/database-e
 docker run --rm --name=nodeapp --net oracle-net -p 3000:3000 <tag-name>
 ```
 
-## Oracle Instant Client Docker
+## Oracle Instant Client with docker
 
 ```sh
 # Run instantclient docker image
