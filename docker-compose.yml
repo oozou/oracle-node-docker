@@ -1,1 +1,39 @@
-# TODO
+version: '3.3'
+
+services:
+  oracledb:
+    restart: always
+    environment:
+      ORACLE_PWD: ${ORACLE_PWD:-Oradoc_db1}
+      DB_SID: ${DB_SID:-sdon}
+    image: store/oracle/database-enterprise:12.2.0.1
+    volumes:
+      - mydb:/opt/oracle/oradata
+    ports:
+      - 1521:1521
+      - 8080:8080
+      - 5500:5500
+    networks:
+      - "oracle-net"
+
+  nodeapp:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/code
+    environment:
+      NODE_ENV: development
+    networks:
+      - "oracle-net"
+    depends_on:
+      - "oracledb"
+    links:
+      - "oracledb:oracledb"
+
+volumes:
+  mydb:
+
+networks:
+  oracle-net:
+    driver: bridge

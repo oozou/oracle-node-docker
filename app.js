@@ -10,11 +10,11 @@ const dbConfig = {
   user: "sys",
   password: "Oradoc_db1",
   // For information on connection strings see:
-  // sys1/Oradoc_db1@oracledb/ORCLPDB1.localdomain
-  // sys/Oradoc_db1@oracledb/ORCLCDB.localdomain
   // https://oracle.github.io/node-oracledb/doc/api.html#connectionstrings
-  connectString: "oracledb/ORCLCDB.localdomain",
+  connectString: "oracledb/sdon.localdomain",
+  // connectString: "oracledb/ORCLPDB1.localdomain",
   privilege: oracledb.SYSDBA,
+  // privilege: oracledb.DEFAULT,
   externalAuth: false,
 };
 

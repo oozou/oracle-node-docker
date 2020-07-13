@@ -22,6 +22,19 @@ Extract `Basic (.zip) or Basic Light (.zip)` to `instantclient/` folder of root 
 4. Docker hub: Oracle Instant Client
 4. https://oracle.github.io/node-oracledb/INSTALL.html#quickstart
 
+## Docker Compose
+
+```sh
+# first time setup will be slow
+docker-compose up
+
+# run individual containers
+docker-compose up nodeapp
+docker-compose up oracledb
+```
+
+## Use old Docker way
+
 ```sh
 # Build docker image
 docker build --tag=<tag-name> .
@@ -45,13 +58,20 @@ docker run -ti --rm --net oracle-net store/oracle/database-instantclient:12.2.0.
 # Connect to PDB database
 bash-4.2# sqlplus sys1/Oradoc_db1@oracledb/ORCLPDB1.localdomain
 
-# Connect to CDB database
+# Connect to CDB database (or sdon if DB_SID specified)
 bash-4.2# sqlplus sys/Oradoc_db1@oracledb/ORCLCDB.localdomain as sysdba
+# bash-4.2# sqlplus sys/Oradoc_db1@oracledb/sdon.localdomain as sysdba
 ```
 
 ## TODO
 
 - [ ] Refactor for formal setup
 - [ ] Customise user, password and database
-- [ ] Use docker-compose
+- [x] Use docker-compose
 - [ ] Add debian based Dockerfile and docker-compose
+
+## Rebuilding docker-compose
+
+```sh
+docker-compose up --build <nodeapp/oracledb> # if not specified all images will rebuild
+```
