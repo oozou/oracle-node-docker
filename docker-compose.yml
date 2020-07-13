@@ -21,7 +21,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/code
+      - .:/usr/src/app
+    command: /usr/src/app/entrypoint.sh
     environment:
       NODE_ENV: development
     networks:

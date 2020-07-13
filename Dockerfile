@@ -15,12 +15,15 @@ RUN  yum -y install oracle-nodejs-release-el7 && \
   yum -y install nodejs && \
   rm -rf /var/cache/yum
 
-WORKDIR /myapp
+# Create and define the node_modules's cache directory.
+RUN mkdir /usr/src/cache
+WORKDIR /usr/src/cache
 
-ADD app.js /myapp/
-ADD package.json /myapp/
-ADD package-lock.json /myapp/
-
+# Install the application's dependencies into the node_modules's cache directory.
+COPY package.json ./
+COPY package-lock.json ./
 RUN npm install
 
-CMD exec npm start
+# Create and define the application's working directory.
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/app

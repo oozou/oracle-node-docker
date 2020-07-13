@@ -33,34 +33,17 @@ docker-compose up nodeapp
 docker-compose up oracledb
 ```
 
-## Use old Docker way
-
-```sh
-# Build docker image
-docker build --tag=<tag-name> .
-
-# Create oracle local network
-docker network create --driver bridge oracle-net
-
-# Run oracle db image
-docker run --name oracledb --net oracle-net -p 1521:1521 store/oracle/database-enterprise:12.2.0.1
-
-# Run docker image
-docker run --rm --name=nodeapp --net oracle-net -p 3000:3000 <tag-name>
-```
-
 ## Oracle Instant Client with docker
 
 ```sh
 # Run instantclient docker image
-docker run -ti --rm --net oracle-net store/oracle/database-instantclient:12.2.0.1 /bin/bash
+docker run -ti --rm --net <network-name> store/oracle/database-instantclient:12.2.0.1 /bin/bash
 
 # Connect to PDB database
 bash-4.2# sqlplus sys1/Oradoc_db1@oracledb/ORCLPDB1.localdomain
 
-# Connect to CDB database (or sdon if DB_SID specified)
-bash-4.2# sqlplus sys/Oradoc_db1@oracledb/ORCLCDB.localdomain as sysdba
-# bash-4.2# sqlplus sys/Oradoc_db1@oracledb/sdon.localdomain as sysdba
+# Connect to DB_SID=sdon database
+bash-4.2# sqlplus sys/Oradoc_db1@oracledb/sdon.localdomain as sysdba
 ```
 
 ## TODO
