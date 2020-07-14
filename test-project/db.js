@@ -27,8 +27,7 @@ async function query(q) {
   try {
     const connection = await oracledb.getConnection(dbConfig);
     try {
-      const results = await connection.execute(q);
-      console.log(results);
+      await connection.execute(q);
     } catch (e) {
       if (e.errorNum !== 942) console.error(e);
     }

@@ -4,7 +4,7 @@
 
 Dev container oracle with node and express
 
-Make sure to `docker login` and get permissions from docker-hub for Oracle before proceeding
+Make sure to perform `docker login` and get permissions from docker-hub for Oracle before proceeding
 
 ## Relevant Links
 
@@ -17,10 +17,10 @@ Make sure to `docker login` and get permissions from docker-hub for Oracle befor
 ## Visual studio dev container
 
 1. Make sure you have "Docker" and "Remote - Containers" extension installed in vscode
-2. When prompted, use `Remote-Containers: Reopen in Container` option
-3. Use F5 or "Debug: Start Debugging" option in vscode
+2. When prompted, use `Remote-Containers: Reopen in Container` option. Setting up first time will take some time as it has to pull and build relevant dependencies. Subsequent launches will be instantaneous
+3. Use F5 or "Debug: Start Debugging" option in vscode to start the app with debug capabilities
 
-## SSH dev container
+## SSH dev container (alternative to Visual studio)
 
 ```sh
 # get container-id
