@@ -11,7 +11,7 @@ const dbConfig = {
   password: "Oradoc_db1",
   // For information on connection strings see:
   // https://oracle.github.io/node-oracledb/doc/api.html#connectionstrings
-  connectString: "oracledb/sdon.localdomain",
+  connectString: "db/sdon.localdomain",
   // connectString: "oracledb/ORCLPDB1.localdomain",
   privilege: oracledb.SYSDBA,
   // privilege: oracledb.DEFAULT,
@@ -40,7 +40,7 @@ async function run() {
       try {
         await connection.execute(s);
       } catch (e) {
-        if (e.errorNum != 942) console.error(e);
+        if (e.errorNum !== 942) console.error(e);
       }
     }
 

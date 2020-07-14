@@ -2,17 +2,9 @@
 
 **in-progress**
 
-This repo contains docker setup for debian, rhel based distro for oracle with node and express
+Dev container oracle with node and express
 
 Make sure to `docker login` and get permissions from docker-hub for Oracle before proceeding
-
-## Download instantclient
-
-Permanent links: **Basic (.zip) or Basic Light (.zip)**
-
-* https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html
-
-Extract `Basic (.zip) or Basic Light (.zip)` to `instantclient/` folder of root dir
 
 ## Relevant Links
 
@@ -22,16 +14,10 @@ Extract `Basic (.zip) or Basic Light (.zip)` to `instantclient/` folder of root 
 4. Docker hub: Oracle Instant Client
 4. https://oracle.github.io/node-oracledb/INSTALL.html#quickstart
 
-## Docker Compose
+## Visual studio dev container
 
-```sh
-# first time setup will be slow
-docker-compose up
-
-# run individual containers
-docker-compose up nodeapp
-docker-compose up oracledb
-```
+1. Make sure you have Remote - Containers extension installed in vscode
+2. When prompted `Remote-Containers: Reopen in Container` option
 
 ## Oracle Instant Client with docker
 
@@ -39,22 +25,17 @@ docker-compose up oracledb
 # Run instantclient docker image
 docker run -ti --rm --net <network-name> store/oracle/database-instantclient:12.2.0.1 /bin/bash
 
-# Connect to PDB database
-bash-4.2# sqlplus sys1/Oradoc_db1@oracledb/ORCLPDB1.localdomain
-
 # Connect to DB_SID=sdon database
 bash-4.2# sqlplus sys/Oradoc_db1@oracledb/sdon.localdomain as sysdba
 ```
+
+## Rebuilding dev container
+
+Use option `Remote-Containers: Rebuild Container`
 
 ## TODO
 
 - [ ] Refactor for formal setup
 - [ ] Customise user, password and database
 - [x] Use docker-compose
-- [ ] Add debian based Dockerfile and docker-compose
-
-## Rebuilding docker-compose
-
-```sh
-docker-compose up --build <nodeapp/oracledb> # if not specified all images will rebuild
-```
+- [x] Add debian based Dockerfile and docker-compose

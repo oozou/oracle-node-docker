@@ -1,5 +1,4 @@
 node_modules
 instantclient*
 .DS_Store
-.vscode
 .env
