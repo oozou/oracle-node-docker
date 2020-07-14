@@ -32,6 +32,10 @@ cd /workspace/test-project
 
 npm install
 npm start
+
+# Create custom database with user and password
+cp .env.example .env
+npm run db:recreate
 ```
 
 - Git credentials are shared between devcontainer and host machine
@@ -54,6 +58,6 @@ Use option `Remote-Containers: Rebuild Container`
 ## TODO
 
 - [ ] Refactor for formal setup
-- [ ] Customise user, password and database
+- [x] Customise user, password and database
 - [x] Use docker-compose
 - [x] Add debian based Dockerfile and docker-compose
