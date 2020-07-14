@@ -2,3 +2,4 @@ node_modules
 instantclient*
 .DS_Store
 .env
+.migrate
