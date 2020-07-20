@@ -42,11 +42,14 @@ npm run db:recreate
 ## Oracle Instant Client with docker
 
 ```sh
+# Get network name
+docker network ls
+
 # Run instantclient docker image
 docker run -ti --rm --net <network-name> store/oracle/database-instantclient:12.2.0.1 /bin/bash
 
-# Connect to DB_SID=sdon database
-bash-4.2# sqlplus sys/Oradoc_db1@oracledb/sdon.localdomain as sysdba
+# Connect to DB_SID=sdon database where 'db' is host from docker-compose
+bash-4.2# sqlplus sys/Oradoc_db1@db/sdon.localdomain as sysdba
 ```
 
 ## Rebuilding dev container
