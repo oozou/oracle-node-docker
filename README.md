@@ -1,7 +1,5 @@
 # Oracle Docker Node
 
-**in-progress**
-
 Dev container oracle with node and express
 
 Make sure to perform `docker login` and get permissions from docker-hub for Oracle before proceeding
@@ -57,7 +55,6 @@ Use option `Remote-Containers: Rebuild Container`
 
 ## TODO
 
-- [ ] Refactor for formal setup
 - [x] Customise user, password and database
 - [x] Use docker-compose
 - [x] Add debian based Dockerfile and docker-compose
