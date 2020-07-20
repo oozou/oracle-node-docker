@@ -1,7 +1,5 @@
 # Oracle Docker Node
 
-**in-progress**
-
 Dev container oracle with node and express
 
 Make sure to perform `docker login` and get permissions from docker-hub for Oracle before proceeding
