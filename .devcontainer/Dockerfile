@@ -29,7 +29,7 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
 WORKDIR /opt/oracle
 
 RUN apt-get update && \
-  apt-get install -y libaio1 unzip wget
+  apt-get install -y libaio1 unzip wget python3-pip
 
 RUN wget https://download.oracle.com/otn_software/linux/instantclient/instantclient-basiclite-linuxx64.zip && \
   unzip instantclient-basiclite-linuxx64.zip && \

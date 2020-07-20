@@ -3,3 +3,4 @@ instantclient*
 .DS_Store
 .env
 .migrate
+__pycache__
